@@ -512,7 +512,7 @@ struct alx_rx_queue {
 #define ALX_RX_FLAG_SW_QUE          0x00000001
 #define ALX_RX_FLAG_HW_QUE          0x00000002
 #define CHK_RX_FLAG(_flag)          CHK_FLAG(rxque, RX, _flag)
-#define SET_RX_FLAG(_flag)          SET_FLAG(rxque, RX, _flag)
+#define SET_RX_FLAG(_flag)          SET_FLAG(ALX_Adapter.rx_queue[que_idx], RX, _flag)
 #define CLI_RX_FLAG(_flag)          CLI_FLAG(rxque, RX, _flag)
 
 #define GET_RF_BUFFER(_rque, _i)    (&((_rque)->rfq.rfbuff[(_i)]))

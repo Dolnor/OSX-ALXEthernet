@@ -1185,7 +1185,7 @@ CLASS::ALX_allocateAllDescriptors()
   ring_header->dbuf =
     IOBufferMemoryDescriptor::inTaskWithPhysicalMask(kernel_task,
     (kIODirectionInOut | kIOMemoryPhysicallyContiguous),
-    ring_header->size, ALX_32BITMASK);
+    ring_header->size, ALX_64BITMASK);
 
   if (!ring_header->dbuf)
   {
@@ -1210,7 +1210,7 @@ CLASS::ALX_allocateAllDescriptors()
     ring_header->dbuf->getPhysicalSegment(0, 0, kIOMemoryMapperNone);
 #endif // __ILP32__
   memset(ring_header->desc, 0, ring_header->size);
-  ring_header->used = ALIGN(ring_header->dma, 8) - ring_header->dma;
+  ring_header->used = (unsigned int)(ALIGN(ring_header->dma, 8ULL) - ring_header->dma);
 
   DbgPrint(3, "ring header: size = %d, used= %d\n",
            ring_header->size, ring_header->used);
@@ -1242,12 +1242,11 @@ CLASS::ALX_allocateAllQueues()
 
   for (que_idx = 0; que_idx < ALX_Adapter.num_txques; que_idx++)
   {
-    struct alx_tx_queue *txque = ALX_Adapter.tx_queue[que_idx];
 
-    txque = (struct alx_tx_queue *)kzalloc(sizeof(struct alx_tx_queue),
+    ALX_Adapter.tx_queue[que_idx] = (struct alx_tx_queue *)kzalloc(sizeof(struct alx_tx_queue),
                                              GFP_KERNEL);
 
-    if (!txque)
+    if (!ALX_Adapter.tx_queue[que_idx])
     {
       ErrPrint("Error allocating Tx queues.\n");
 
@@ -1259,20 +1258,18 @@ CLASS::ALX_allocateAllQueues()
       return kIOReturnNoMemory;
     }
 
-    txque->tpq.count = ALX_Adapter.num_txdescs;
-    txque->que_idx = que_idx;
+    ALX_Adapter.tx_queue[que_idx]->tpq.count = ALX_Adapter.num_txdescs;
+    ALX_Adapter.tx_queue[que_idx]->que_idx = que_idx;
 
-    ALX_Adapter.tx_queue[que_idx] = txque;
   }
 
   for (que_idx = 0; que_idx < ALX_Adapter.num_rxques; que_idx++)
   {
-    struct alx_rx_queue *rxque = ALX_Adapter.rx_queue[que_idx];
 
-    rxque = (struct alx_rx_queue *)kzalloc(sizeof(struct alx_rx_queue),
+    ALX_Adapter.rx_queue[que_idx] = (struct alx_rx_queue *)kzalloc(sizeof(struct alx_rx_queue),
                                              GFP_KERNEL);
 
-    if (!rxque)
+    if (!ALX_Adapter.rx_queue[que_idx])
     {
       ErrPrint("Error allocating Rx queues.\n");
 
@@ -1289,10 +1286,10 @@ CLASS::ALX_allocateAllQueues()
       return kIOReturnNoMemory;
     }
 
-    rxque->rrq.count = ALX_Adapter.num_rxdescs;
-    rxque->rfq.count = ALX_Adapter.num_rxdescs;
-    rxque->swq.count = ALX_Adapter.num_rxdescs;
-    rxque->que_idx = que_idx;
+    ALX_Adapter.rx_queue[que_idx]->rrq.count = ALX_Adapter.num_rxdescs;
+    ALX_Adapter.rx_queue[que_idx]->rfq.count = ALX_Adapter.num_rxdescs;
+    ALX_Adapter.rx_queue[que_idx]->swq.count = ALX_Adapter.num_rxdescs;
+    ALX_Adapter.rx_queue[que_idx]->que_idx = que_idx;
 
     if (ALX_checkAdapterFlag(SRSS_EN))
     {
@@ -1311,7 +1308,6 @@ CLASS::ALX_allocateAllQueues()
       SET_RX_FLAG(HW_QUE);
     }
 
-    ALX_Adapter.rx_queue[que_idx] = rxque;
   }
 
   DbgPrint(3, "num_tx_descs = %d, num_rx_descs = %d\n",
@@ -2690,7 +2686,7 @@ CLASS::ALX_initBuffer(struct alx_buffer *buf)
   }
 
   buf->dcom = IODMACommand::withSpecification(kIODMACommandOutputHost64,
-              32, 0x4000, IODMACommand::kMapped, 0, 8, 0, 0);
+              64, 0x4000, IODMACommand::kMapped, 0, 8, 0, 0);
 
   if (!buf->dcom)
   {
@@ -3359,8 +3355,8 @@ CLASS::ALX_setDeviceInfo()
     break;
   }
 
-  ALX_PCIDevice->setProperty("model", ALX_deviceTable[ALX_DeviceTableIndex].name);
-  setProperty("name", "ethernet");
+    ALX_PCIDevice->setProperty("model", ALX_deviceTable[ALX_DeviceTableIndex].name);
+    setProperty("name", "ethernet");
 }
 
 //==============================================================================
@@ -3531,7 +3527,7 @@ CLASS::ALX_setRegisterInfoSpecial()
 {
   struct alx_hw *hw = &ALX_Adapter.hw;
   int num_txques = ALX_Adapter.num_txques;
-
+    if ((ALX_Adapter.rx_queue[0] != NULL) && (ALX_Adapter.tx_queue[0] != NULL) && (num_txques > 1 ? (ALX_Adapter.tx_queue[1] != NULL) : TRUE) && (num_txques > 2 ? (ALX_Adapter.tx_queue[2] != NULL) : TRUE) && (num_txques > 3 ? (ALX_Adapter.tx_queue[3]) != NULL: TRUE))
   switch (ALX_Adapter.hw.mac_type)
   {
   case alx_mac_l1f:
@@ -3830,7 +3826,7 @@ IOReturn
 CLASS::ALX_startTransmitFrame(struct alx_tx_queue *txque, mbuf_t m)
 {
   struct alx_hw *hw = &ALX_Adapter.hw;
-  unsigned long flags = 0;
+  IOInterruptState flags = 0;
   union alx_sw_tpdesc stpd;
 
   if (ALX_checkAdapterFlag(STATE_DOWN) ||
@@ -3971,7 +3967,7 @@ CLASS::ALX_TxMap(struct alx_tx_queue *txque, mbuf_t m,
 {
   struct alx_buffer *tpbuf = NULL;
   // uint nr_frags = skb_shinfo(skb)->nr_frags;
-  uint len = mbuf_len(m);
+  size_t len = mbuf_len(m);
 
   // UInt16 map_len = 0;
   UInt16 mapped_len = 0;

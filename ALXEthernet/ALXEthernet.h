@@ -50,12 +50,13 @@ do                                                                             \
 } while(0)
 
 #define ALX_MULTICAST_CAPACITY      32
-#define ALX_RX_DESCS                512
-#define ALX_TX_DESCS                1024
+#define ALX_RX_DESCS                1024
+#define ALX_TX_DESCS                512
 
 // Buffer address mask, 32 bit addressable and 8-byte boundry aligned.
 #define ALX_BufferAddressMask	(0x00000000ffffffffULL & ~(sizeof(UInt64) - 1))
 #define ALX_32BITMASK 0x00000000ffffffffULL
+#define ALX_64BITMASK 0xfffffffffffff000ULL
 
 
 #define NumPMStates                 2
