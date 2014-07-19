@@ -1,0 +1,362 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		9202744D163241610003C84C /* ALXEthernet.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9202744C163241610003C84C /* ALXEthernet.cpp */; };
+		9202745F163241F60003C84C /* alc_cb.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 92027454163241F60003C84C /* alc_cb.cpp */; };
+		92027460163241F60003C84C /* alc_hw.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 92027455163241F60003C84C /* alc_hw.cpp */; };
+		92027461163241F60003C84C /* alc_hw.h in Headers */ = {isa = PBXBuildFile; fileRef = 92027456163241F60003C84C /* alc_hw.h */; };
+		92027462163241F60003C84C /* alf_cb.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 92027457163241F60003C84C /* alf_cb.cpp */; };
+		92027463163241F60003C84C /* alf_hw.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 92027458163241F60003C84C /* alf_hw.cpp */; };
+		92027464163241F60003C84C /* alf_hw.h in Headers */ = {isa = PBXBuildFile; fileRef = 92027459163241F60003C84C /* alf_hw.h */; };
+		92027466163241F60003C84C /* alx_hwcom.h in Headers */ = {isa = PBXBuildFile; fileRef = 9202745B163241F60003C84C /* alx_hwcom.h */; };
+		92027467163241F60003C84C /* alx_main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9202745C163241F60003C84C /* alx_main.cpp */; };
+		92027468163241F60003C84C /* alx_sw.h in Headers */ = {isa = PBXBuildFile; fileRef = 9202745D163241F60003C84C /* alx_sw.h */; };
+		92027469163241F60003C84C /* alx.h in Headers */ = {isa = PBXBuildFile; fileRef = 9202745E163241F60003C84C /* alx.h */; };
+		9290E8EC16337030002E69E9 /* mii.h in Headers */ = {isa = PBXBuildFile; fileRef = 9290E8E516337030002E69E9 /* mii.h */; };
+		9290E8EE16337030002E69E9 /* pci_regs.h in Headers */ = {isa = PBXBuildFile; fileRef = 9290E8E716337030002E69E9 /* pci_regs.h */; };
+		9290E8F11633707F002E69E9 /* alx_defs.h in Headers */ = {isa = PBXBuildFile; fileRef = 9290E8F01633707F002E69E9 /* alx_defs.h */; };
+		9290E8FA16339905002E69E9 /* alx_net.h in Headers */ = {isa = PBXBuildFile; fileRef = 9290E8F916339905002E69E9 /* alx_net.h */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		92027440163241610003C84C /* ALXEthernet.kext */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ALXEthernet.kext; sourceTree = BUILT_PRODUCTS_DIR; };
+		92027444163241610003C84C /* Kernel.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Kernel.framework; path = System/Library/Frameworks/Kernel.framework; sourceTree = SDKROOT; };
+		92027447163241610003C84C /* ALXEthernet-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ALXEthernet-Info.plist"; sourceTree = "<group>"; };
+		9202744B163241610003C84C /* ALXEthernet.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; path = ALXEthernet.h; sourceTree = "<group>"; };
+		9202744C163241610003C84C /* ALXEthernet.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = ALXEthernet.cpp; sourceTree = "<group>"; };
+		9202744E163241610003C84C /* ALXEthernet-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ALXEthernet-Prefix.pch"; sourceTree = "<group>"; };
+		92027454163241F60003C84C /* alc_cb.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = alc_cb.cpp; path = alx/alc_cb.cpp; sourceTree = "<group>"; };
+		92027455163241F60003C84C /* alc_hw.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = alc_hw.cpp; path = alx/alc_hw.cpp; sourceTree = "<group>"; };
+		92027456163241F60003C84C /* alc_hw.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = alc_hw.h; path = alx/alc_hw.h; sourceTree = "<group>"; };
+		92027457163241F60003C84C /* alf_cb.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = alf_cb.cpp; path = alx/alf_cb.cpp; sourceTree = "<group>"; };
+		92027458163241F60003C84C /* alf_hw.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = alf_hw.cpp; path = alx/alf_hw.cpp; sourceTree = "<group>"; };
+		92027459163241F60003C84C /* alf_hw.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = alf_hw.h; path = alx/alf_hw.h; sourceTree = "<group>"; };
+		9202745B163241F60003C84C /* alx_hwcom.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = alx_hwcom.h; path = alx/alx_hwcom.h; sourceTree = "<group>"; };
+		9202745C163241F60003C84C /* alx_main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = alx_main.cpp; path = alx/alx_main.cpp; sourceTree = "<group>"; };
+		9202745D163241F60003C84C /* alx_sw.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = alx_sw.h; path = alx/alx_sw.h; sourceTree = "<group>"; };
+		9202745E163241F60003C84C /* alx.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = alx.h; path = alx/alx.h; sourceTree = "<group>"; };
+		9290E8E516337030002E69E9 /* mii.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mii.h; sourceTree = "<group>"; };
+		9290E8E716337030002E69E9 /* pci_regs.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = pci_regs.h; sourceTree = "<group>"; };
+		9290E8F01633707F002E69E9 /* alx_defs.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = alx_defs.h; path = compatibility/alx_defs.h; sourceTree = "<group>"; };
+		9290E8F916339905002E69E9 /* alx_net.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = alx_net.h; path = compatibility/alx_net.h; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		9202743B163241610003C84C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		92027433163241610003C84C = {
+			isa = PBXGroup;
+			children = (
+				92027445163241610003C84C /* ALXEthernet */,
+				92027442163241610003C84C /* Frameworks */,
+				92027441163241610003C84C /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		92027441163241610003C84C /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				92027440163241610003C84C /* ALXEthernet.kext */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		92027442163241610003C84C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				92027443163241610003C84C /* Other Frameworks */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		92027443163241610003C84C /* Other Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				92027444163241610003C84C /* Kernel.framework */,
+			);
+			name = "Other Frameworks";
+			sourceTree = "<group>";
+		};
+		92027445163241610003C84C /* ALXEthernet */ = {
+			isa = PBXGroup;
+			children = (
+				9290E8F216337088002E69E9 /* compatibility */,
+				9290E8E016337030002E69E9 /* linux */,
+				9202746A1632420A0003C84C /* alx */,
+				9202744B163241610003C84C /* ALXEthernet.h */,
+				9202744C163241610003C84C /* ALXEthernet.cpp */,
+				92027446163241610003C84C /* Supporting Files */,
+			);
+			path = ALXEthernet;
+			sourceTree = "<group>";
+		};
+		92027446163241610003C84C /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				92027447163241610003C84C /* ALXEthernet-Info.plist */,
+				9202744E163241610003C84C /* ALXEthernet-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		9202746A1632420A0003C84C /* alx */ = {
+			isa = PBXGroup;
+			children = (
+				92027454163241F60003C84C /* alc_cb.cpp */,
+				92027455163241F60003C84C /* alc_hw.cpp */,
+				92027456163241F60003C84C /* alc_hw.h */,
+				92027457163241F60003C84C /* alf_cb.cpp */,
+				92027458163241F60003C84C /* alf_hw.cpp */,
+				92027459163241F60003C84C /* alf_hw.h */,
+				9202745B163241F60003C84C /* alx_hwcom.h */,
+				9202745C163241F60003C84C /* alx_main.cpp */,
+				9202745D163241F60003C84C /* alx_sw.h */,
+				9202745E163241F60003C84C /* alx.h */,
+			);
+			name = alx;
+			sourceTree = "<group>";
+		};
+		9290E8E016337030002E69E9 /* linux */ = {
+			isa = PBXGroup;
+			children = (
+				9290E8E516337030002E69E9 /* mii.h */,
+				9290E8E716337030002E69E9 /* pci_regs.h */,
+			);
+			path = linux;
+			sourceTree = "<group>";
+		};
+		9290E8F216337088002E69E9 /* compatibility */ = {
+			isa = PBXGroup;
+			children = (
+				9290E8F01633707F002E69E9 /* alx_defs.h */,
+				9290E8F916339905002E69E9 /* alx_net.h */,
+			);
+			name = compatibility;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		9202743C163241610003C84C /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				92027461163241F60003C84C /* alc_hw.h in Headers */,
+				92027464163241F60003C84C /* alf_hw.h in Headers */,
+				92027466163241F60003C84C /* alx_hwcom.h in Headers */,
+				92027468163241F60003C84C /* alx_sw.h in Headers */,
+				92027469163241F60003C84C /* alx.h in Headers */,
+				9290E8EC16337030002E69E9 /* mii.h in Headers */,
+				9290E8EE16337030002E69E9 /* pci_regs.h in Headers */,
+				9290E8F11633707F002E69E9 /* alx_defs.h in Headers */,
+				9290E8FA16339905002E69E9 /* alx_net.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		9202743F163241610003C84C /* ALXEthernet */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 92027451163241610003C84C /* Build configuration list for PBXNativeTarget "ALXEthernet" */;
+			buildPhases = (
+				9202743A163241610003C84C /* Sources */,
+				9202743B163241610003C84C /* Frameworks */,
+				9202743C163241610003C84C /* Headers */,
+				9202743D163241610003C84C /* Resources */,
+				9202743E163241610003C84C /* Rez */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ALXEthernet;
+			productName = ALXEthernet;
+			productReference = 92027440163241610003C84C /* ALXEthernet.kext */;
+			productType = "com.apple.product-type.kernel-extension";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		92027435163241610003C84C /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0500;
+				ORGANIZATIONNAME = InsanelyMac;
+			};
+			buildConfigurationList = 92027438163241610003C84C /* Build configuration list for PBXProject "ALXEthernet" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 92027433163241610003C84C;
+			productRefGroup = 92027441163241610003C84C /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				9202743F163241610003C84C /* ALXEthernet */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		9202743D163241610003C84C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXRezBuildPhase section */
+		9202743E163241610003C84C /* Rez */ = {
+			isa = PBXRezBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXRezBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		9202743A163241610003C84C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9202744D163241610003C84C /* ALXEthernet.cpp in Sources */,
+				9202745F163241F60003C84C /* alc_cb.cpp in Sources */,
+				92027460163241F60003C84C /* alc_hw.cpp in Sources */,
+				92027462163241F60003C84C /* alf_cb.cpp in Sources */,
+				92027463163241F60003C84C /* alf_hw.cpp in Sources */,
+				92027467163241F60003C84C /* alx_main.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		9202744F163241610003C84C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = "DEBUG=1";
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx10.8;
+				VALID_ARCHS = x86_64;
+			};
+			name = Debug;
+		};
+		92027450163241610003C84C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = "";
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				SDKROOT = macosx10.8;
+				VALID_ARCHS = x86_64;
+			};
+			name = Release;
+		};
+		92027452163241610003C84C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1.0.2;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "ALXEthernet/ALXEthernet-Prefix.pch";
+				GCC_VERSION = "";
+				GCC_WARN_64_TO_32_BIT_CONVERSION = NO;
+				INFOPLIST_FILE = "ALXEthernet/ALXEthernet-Info.plist";
+				MODULE_NAME = com.insanelymac.ALXEthernet;
+				MODULE_VERSION = "${CURRENT_PROJECT_VERSION}";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				VALID_ARCHS = x86_64;
+				WRAPPER_EXTENSION = kext;
+			};
+			name = Debug;
+		};
+		92027453163241610003C84C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1.0.2;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "ALXEthernet/ALXEthernet-Prefix.pch";
+				GCC_VERSION = "";
+				GCC_WARN_64_TO_32_BIT_CONVERSION = NO;
+				INFOPLIST_FILE = "ALXEthernet/ALXEthernet-Info.plist";
+				MODULE_NAME = com.insanelymac.ALXEthernet;
+				MODULE_VERSION = "${CURRENT_PROJECT_VERSION}";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				VALID_ARCHS = x86_64;
+				WRAPPER_EXTENSION = kext;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		92027438163241610003C84C /* Build configuration list for PBXProject "ALXEthernet" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9202744F163241610003C84C /* Debug */,
+				92027450163241610003C84C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		92027451163241610003C84C /* Build configuration list for PBXNativeTarget "ALXEthernet" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				92027452163241610003C84C /* Debug */,
+				92027453163241610003C84C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 92027435163241610003C84C /* Project object */;
+}
