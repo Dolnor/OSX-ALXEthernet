@@ -1,7 +1,7 @@
 
-## OSX driver for Atheros(R) AR81(31/32/51/52/61/62/71/72) PCI-E ethernet
+## Atheros(R) AR81(31/32/51/52/61/62/71/72) PCI-E ethernet
 
-Driver originally coded by Shailua based on “Unified alx driver strategy attempt for Linux and FreeBSD”, 
+Atheros OSX driver originally coded by Shailua based on “Unified alx driver strategy attempt for Linux and FreeBSD”, 
 
 at https://github.com/erikarn/alx  
 
