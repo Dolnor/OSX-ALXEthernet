@@ -2,10 +2,7 @@
 ## Atheros(R) AR81(31/32/51/52/61/62/71/72) PCI-E ethernet
 
 Atheros OSX driver originally coded by Shailua based on “Unified alx driver strategy attempt for Linux and FreeBSD”, 
-
-at https://github.com/erikarn/alx  
-
-with additions by Zephiris. 
+at https://github.com/erikarn/alx with additions by Zephiris. 
 
 Original discussion thread: 
 
@@ -53,6 +50,6 @@ v1.0.0
 Using Apple's "Logic Remote" from Wi-Fi (then to ethernet) will kill the driver immediately with "incorrect zfree from zone kalloc.16 to zone kalloc.32"
 
 
-## To-Do:
+### To-Do:
 
 Backport newer Linux/FreeBSD code into the project.
